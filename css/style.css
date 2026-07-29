@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    background: #F8F5F0;
+    font-family: serif;
+}
+
+
+.invitation {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.cover h1 {
+    font-size: 2.5rem;
+    color: #8C1D2C;
+}
+
+
+.cover p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
