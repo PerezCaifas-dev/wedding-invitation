@@ -6,17 +6,10 @@
 
 
 body {
-    min-height: 100vh;
+    margin: 0;
     background: #F8F5F0;
-    font-family: serif;
+    font-family: Georgia, serif;
 }
-
-
-.invitation {
-    width: 100%;
-    min-height: 100vh;
-}
-
 
 .cover {
     min-height: 100vh;
@@ -25,16 +18,28 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 40px 20px;
 }
 
-
-.cover h1 {
-    font-size: 2.5rem;
+.title {
     color: #8C1D2C;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
+.envelope {
+    width: min(850px, 85vw);
+    height: auto;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
 
-.cover p {
-    margin-top: 20px;
-    font-size: 1.1rem;
+.envelope:hover {
+    transform: scale(1.02);
+}
+
+.tap-text {
+    margin-top: 35px;
+    color: #666;
+    font-size: 1rem;
 }
