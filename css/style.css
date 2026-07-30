@@ -27,11 +27,17 @@ body {
     margin-bottom: 40px;
 }
 
-.envelope {
+/* .envelope {
     width: min(850px, 85vw);
     height: auto;
     cursor: pointer;
     transition: transform .3s ease;
+} */
+
+.envelope {
+    width: 85vw;
+    max-width: 850px;
+    height: auto;
 }
 
 .envelope:hover {
