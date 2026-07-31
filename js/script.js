@@ -42,7 +42,7 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 seal.addEventListener("click", () => {
-    // music.play();
+    music.play();
     closed.style.display = "none";
     seal.style.display = "none";
     open.style.display = "block";
