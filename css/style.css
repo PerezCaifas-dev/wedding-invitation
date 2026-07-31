@@ -66,8 +66,50 @@ body {
     display:block;
 }
 
+.letter{
+    display:none;
+    position:absolute;
+    width:67%;
+    height:36%;
+    aspect-ratio: 3 / 4;
+    left:50%;
+    bottom:45%;
+    transform:translateX(-50%);
+    background-image:url("../assets/images/letter.png");
+    background-size:cover;
+    background-position:center;
+    z-index:1;
+    transition:all 1s ease;
+}
+
+.letter-content {
+    position:absolute;
+    inset:0;
+    padding:60px;
+    text-align:center;
+}
+
+.letter.extract{
+    transform:
+        translateX(-50%)
+        translateY(-220px);
+}
+
+.letter.fullscreen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: none;
+    max-width: none;
+    z-index: 100;
+}
+
 .open{
     display:none;
+    position:relative;
+    width:100%;
 }
 
 .seal{
