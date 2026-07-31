@@ -4,6 +4,8 @@ const open = document.querySelector(".open");
 const music = document.getElementById("backgroundMusic");
 const letter = document.querySelector(".letter");
 const countdown = document.querySelector(".countdown");
+const churchLocation = document.querySelector(".location");
+const letterTitle = document.querySelector(".letter-title");
 
 const weddingDate = new Date("2026-10-03T17:00:00");
 
@@ -45,13 +47,6 @@ seal.addEventListener("click", () => {
     seal.style.display = "none";
     open.style.display = "block";
     letter.style.display = "block";
-    // letter.classList.add("extract");
-
-    // setTimeout(() => {
-    //     music.play().catch(error => {
-    //         console.log("No se pudo reproducir el audio:", error);
-    //     });
-    // }, 300);
 
 });
 
@@ -59,15 +54,31 @@ open.addEventListener("click", () => {
     letter.style.display = "block";
     letter.style.zIndex = "10";
     letter.classList.add("extract");
+    letterTitle.style.display = "none";
     open.style.display = "none";
-    letter.classList.add("fullscreen");
+    setTimeout(() => {
+        letter.classList.add("fullscreen");
+        letterTitle.style.display = "block";
+        document.querySelector("h1").style.opacity="1";
+        countdown.style.display = "block";
+        churchLocation.style.display = "block";
+
+    }, 1000);
 });
 
 letter.addEventListener("click", () => {
+    letterTitle.style.display = "none";
     letter.style.display = "block";
     letter.style.zIndex = "10";
     letter.classList.add("extract");
     open.style.display = "none";
-    letter.classList.add("fullscreen");
-    countdown.style.display = "block";
+    setTimeout(() => {
+        letter.classList.add("fullscreen");
+        letterTitle.style.display = "block";
+        document.querySelector("h1").style.opacity="1";
+        countdown.style.display = "block";
+        churchLocation.style.display = "block";
+
+    }, 1000);
+    
 });
