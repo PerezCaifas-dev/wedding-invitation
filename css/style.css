@@ -49,3 +49,32 @@ body {
     color: #666;
     font-size: 1rem;
 }
+
+.envelope-container{
+    position: relative;
+    width: 85vw;
+    max-width: 850px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.envelope{
+    width:100%;
+    display:block;
+}
+
+.seal{
+    position:absolute;
+    width:500px;
+    left:50%;
+    top:52%;
+    transform:translate(-50%,-50%);
+    cursor:pointer;
+    transition:.3s;
+    z-index:10;
+}
+
+.seal:hover{
+    transform:translate(-50%,-50%) scale(1.05);
+}
