@@ -27,3 +27,11 @@ open.addEventListener("click", () => {
     open.style.display = "none";
     letter.classList.add("fullscreen");
 });
+
+letter.addEventListener("click", () => {
+    letter.style.display = "block";
+    letter.style.zIndex = "10";
+    letter.classList.add("extract");
+    open.style.display = "none";
+    letter.classList.add("fullscreen");
+});

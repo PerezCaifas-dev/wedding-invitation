@@ -9,6 +9,11 @@ body {
     margin: 0;
     background: #F8F5F0;
     font-family: Georgia, serif;
+    background-image: url("../assets/images/photo-1.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 .cover {
@@ -19,6 +24,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 40px 20px;
+    background-image: url("../assets/images/photo-1.jpeg");
 }
 
 .title {
@@ -43,6 +49,10 @@ body {
 .envelope:hover {
     transform: scale(1.02);
 }
+
+/* .invitation{
+    background-image: url("../assets/images/photo-1.jpeg");
+} */
 
 .tap-text {
     margin-top: 35px;
@@ -69,11 +79,14 @@ body {
 .letter{
     display:none;
     position:absolute;
-    width:67%;
-    height:36%;
+    /* width:67%;
+    height:36%; */
+    width:57%;
+    height:33%;
     aspect-ratio: 3 / 4;
     left:50%;
-    bottom:45%;
+    /* bottom:45%; */
+    bottom:47%;
     transform:translateX(-50%);
     background-image:url("../assets/images/letter.png");
     background-size:cover;
