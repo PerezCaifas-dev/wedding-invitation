@@ -6,8 +6,29 @@ const letter = document.querySelector(".letter");
 const countdown = document.querySelector(".countdown");
 const churchLocation = document.querySelector(".location");
 const letterTitle = document.querySelector(".letter-title");
-
+const guestAPI = "https://script.google.com/macros/s/AKfycbywgH1pPOn7ttEIVwM8Zs3kwT_DXWU2ol9C_yDxbGeCRWe0sULDna98PPbrHbCMzIidrA/exec";
+const params = new URLSearchParams(window.location.search);
+const guestId = params.get("id");
 const weddingDate = new Date("2026-10-03T17:00:00");
+
+if(guestId){
+
+    fetch(`${guestAPI}?id=${guestId}`)
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        document.getElementById("guestFamily")
+            .textContent = data.familia;
+
+
+        document.getElementById("guestNames")
+            .textContent = data.invitados;
+
+    });
+
+}
 
 function updateCountdown(){
 
