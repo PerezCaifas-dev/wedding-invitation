@@ -66,9 +66,9 @@ body {
 
 .seal{
     position:absolute;
-    width:500px;
-    left:50%;
-    top:52%;
+    width:90vw;
+    left:48%;
+    top:66%;
     transform:translate(-50%,-50%);
     cursor:pointer;
     transition:.3s;
