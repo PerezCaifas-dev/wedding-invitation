@@ -66,6 +66,10 @@ body {
     display:block;
 }
 
+.open{
+    display:none;
+}
+
 .seal{
     position:absolute;
     width:91vw;
@@ -80,4 +84,11 @@ body {
 
 .seal:hover{
     transform:translate(-50%,-50%) scale(1.05);
+}
+
+.seal:active{
+    transform:
+        translate(-50%,-50%)
+        scale(.92);
+
 }
