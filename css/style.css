@@ -221,6 +221,16 @@ body {
 
 }
 
+.second-message{
+    font-family:"Allura", cursive;
+    display:none;
+}
+
+.second-text{
+    width:100%;
+    display:none;
+}
+
 .section-title{
     font-family:"Cormorant Garamond", serif;
     font-size:2rem;

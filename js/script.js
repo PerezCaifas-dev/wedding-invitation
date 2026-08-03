@@ -15,6 +15,7 @@ const tapMessage = document.querySelector(".tap-message");
 const countdownClock = document.querySelector(".countdown");
 const confirmation = document.querySelector(".confirmation");
 const firstMessage = document.querySelector(".first-message");
+const secondText = document.querySelector(".second-text");
 
 if(guestId){
 
@@ -82,6 +83,7 @@ seal.addEventListener("click", () => {
         countdownClock.style.display = "block";
         confirmation.style.display = "block";
         firstMessage.style.fontSize = "16px";
+        secondText.style.display = "block";
         // firstMessage.style.font-size = "block";
 
     }, 3000);
