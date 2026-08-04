@@ -16,6 +16,9 @@ const countdownClock = document.querySelector(".countdown");
 const confirmation = document.querySelector(".confirmation");
 const firstMessage = document.querySelector(".first-message");
 const secondText = document.querySelector(".second-text");
+const text1 = document.querySelector(".text-1");
+const text2 = document.querySelector(".text-2");
+const text3 = document.querySelector(".text-3");
 
 if(guestId){
 
@@ -82,9 +85,9 @@ seal.addEventListener("click", () => {
         churchLocation.style.display = "block";
         countdownClock.style.display = "block";
         confirmation.style.display = "block";
-        firstMessage.style.fontSize = "16px";
-        secondText.style.display = "block";
-        // firstMessage.style.font-size = "block";
+        text1.style.display = "block";
+        text2.style.display = "block";
+        text3.style.display = "block";
 
     }, 3000);
 

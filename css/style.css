@@ -40,7 +40,7 @@ body {
 
 .countdown{
     display:none;
-    margin-top:50%;
+    margin-top:0;
     width:100%;
     text-align:center;
 }
@@ -155,6 +155,7 @@ body {
     transform: none;
     max-width: none;
     z-index: 100;
+    overflow-y: auto;
 }
 
 .location{
@@ -278,6 +279,27 @@ body {
     margin-top: 35px;
     color: #666;
     font-size: 1rem;
+}
+
+.text-1{
+    width:100%;
+    display:block;
+    margin-top:100px;
+    display:none;
+}
+
+.text-2{
+    width:100%;
+    display:block;
+    margin-top:100px;
+    display:none;
+}
+
+.text-3{
+    width:100%;
+    display:block;
+    margin-top:0;
+    display:none;
 }
 
 .time-unit{
