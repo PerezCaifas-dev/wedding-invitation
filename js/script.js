@@ -19,6 +19,17 @@ const secondText = document.querySelector(".second-text");
 const text1 = document.querySelector(".text-1");
 const text2 = document.querySelector(".text-2");
 const text3 = document.querySelector(".text-3");
+const photo3 = document.querySelector(".photo-3");
+const text4 = document.querySelector(".text-4");
+const text5 = document.querySelector(".text-5");
+const text6 = document.querySelector(".text-6");
+const photo4 = document.querySelector(".photo-4");
+const church = document.querySelector(".church");
+const text7 = document.querySelector(".text-7");
+const text8 = document.querySelector(".text-8");
+const text9 = document.querySelector(".text-9");
+const photo5 = document.querySelector(".photo-5");
+
 
 if(guestId){
 
@@ -72,7 +83,7 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 seal.addEventListener("click", () => {
-    // music.play();
+    music.play();
     closed.style.display = "none";
     seal.style.display = "none";
     initials.style.display = "none";
@@ -83,13 +94,23 @@ seal.addEventListener("click", () => {
         letter.classList.add("fullscreen");
         countdown.style.display = "block";
         churchLocation.style.display = "block";
+        church.style.display = "block";
         countdownClock.style.display = "block";
         confirmation.style.display = "block";
         text1.style.display = "block";
         text2.style.display = "block";
         text3.style.display = "block";
+        photo3.style.display = "block";
+        text4.style.display = "block";
+        text5.style.display = "block";
+        text6.style.display = "block";
+        photo4.style.display = "block";
+        text7.style.display = "block";
+        text8.style.display = "block";
+        text9.style.display = "block";
+        photo5.style.display = "block";
 
-    }, 3000);
+    }, 1000);
 
 });
 

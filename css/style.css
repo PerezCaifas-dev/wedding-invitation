@@ -20,6 +20,10 @@ body {
     min-height: 100vh;
 }
 
+.church{
+    display:none;
+}
+
 .confirmation{
     margin-top:50px;
     text-align:center;
@@ -159,7 +163,6 @@ body {
 }
 
 .location{
-    margin-top:50px;
     text-align:center;
     display:none;
 }
@@ -191,6 +194,24 @@ body {
 .photo-2{
     width:100%;
     display:block;
+}
+
+.photo-3{
+    width:100%;
+    display:none;
+    margin-top:100px;
+}
+
+.photo-4{
+    width:100%;
+    display:none;
+    margin-top:100px;
+}
+
+.photo-5{
+    width:100%;
+    display:none;
+    margin-top:100px;
 }
 
 .open{
@@ -296,6 +317,48 @@ body {
 }
 
 .text-3{
+    width:100%;
+    display:block;
+    margin-top:0;
+    display:none;
+}
+
+.text-4{
+    width:100%;
+    display:block;
+    margin-top:0;
+    display:none;
+}
+
+.text-5{
+    width:100%;
+    display:block;
+    margin-top:0;
+    display:none;
+}
+
+.text-6{
+    width:100%;
+    display:block;
+    margin-top:0;
+    display:none;
+}
+
+.text-7{
+    width:100%;
+    display:block;
+    margin-top:0;
+    display:none;
+}
+
+.text-8{
+    width:100%;
+    display:block;
+    margin-top:0;
+    display:none;
+}
+
+.text-9{
     width:100%;
     display:block;
     margin-top:0;
