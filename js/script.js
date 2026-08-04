@@ -36,6 +36,8 @@ const location1 = document.querySelector(".location-1");
 const photo6 = document.querySelector(".photo-6");
 const text13 = document.querySelector(".text-13");
 const text14 = document.querySelector(".text-14");
+const text15 = document.querySelector(".text-15");
+const photo8 = document.querySelector(".photo-8");
 
 
 if(guestId){
@@ -90,7 +92,7 @@ updateCountdown();
 setInterval(updateCountdown,1000);
 
 seal.addEventListener("click", () => {
-    // music.play();
+    music.play();
     closed.style.display = "none";
     seal.style.display = "none";
     initials.style.display = "none";
@@ -123,6 +125,8 @@ seal.addEventListener("click", () => {
         photo6.style.display = "block";
         text13.style.display = "block";
         text14.style.display = "block";
+        text15.style.display = "block";
+        photo8.style.display = "block";
 
     }, 1000);
 

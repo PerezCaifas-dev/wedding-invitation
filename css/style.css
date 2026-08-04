@@ -220,6 +220,12 @@ body {
     margin-top:100px;
 }
 
+.photo-8{
+    width:100%;
+    display:none;
+    margin-bottom:50px;
+}
+
 .open{
     display:none;
     position:relative;
@@ -401,6 +407,13 @@ body {
 }
 
 .text-14{
+    width:100%;
+    display:block;
+    margin-top:50px;
+    display:none;
+}
+
+.text-15{
     width:100%;
     display:block;
     margin-top:50px;
