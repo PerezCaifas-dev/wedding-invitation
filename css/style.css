@@ -317,21 +317,18 @@ body {
 .text-1{
     width:100%;
     display:block;
-    /* margin-top:100px; */
     display:none;
 }
 
 .text-2{
     width:100%;
     display:block;
-    /* margin-top:100px; */
     display:none;
 }
 
 .text-3{
     width:100%;
     display:block;
-    margin-top:0;
     display:none;
 }
 
