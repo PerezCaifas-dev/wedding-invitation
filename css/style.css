@@ -31,9 +31,9 @@ body {
 }
 
 .confirmation{
-    margin-top:50px;
     text-align:center;
     display:none;
+    background:#f6f2ef;
 }
 
 
@@ -42,7 +42,7 @@ body {
     border:2px solid #C8A45D;
     border-radius:40px;
     background:transparent;
-    color:#8C1D2C;
+    color:#D4AF37;
     font-family:"Cormorant Garamond", serif;
     font-size:1.1rem;
     cursor:pointer;
@@ -402,22 +402,18 @@ body {
 
 .text-13{
     width:100%;
-    display:block;
-    margin-top:50px;
     display:none;
 }
 
 .text-14{
     width:100%;
     display:block;
-    margin-top:50px;
     display:none;
 }
 
 .text-15{
     width:100%;
     display:block;
-    margin-top:50px;
     display:none;
 }
 
