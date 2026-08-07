@@ -20,6 +20,11 @@ body {
     min-height: 100vh;
 }
 
+.brindis{
+    display:none;
+    width:100%;
+}
+
 .church{
     display:none;
     width:100%;
@@ -168,6 +173,8 @@ body {
 .location{
     text-align:center;
     display:none;
+    background:#f6f2ef;
+    padding-bottom:80px;
 }
 
 .location-button{
@@ -177,7 +184,7 @@ body {
     padding:14px 26px;
     border:2px solid #C8A45D;
     border-radius:40px;
-    color:#8C1D2C;
+    color:#D4AF37;
     text-decoration:none;
     font-weight:600;
     transition:.3s ease;
@@ -212,13 +219,11 @@ body {
 .photo-5{
     width:100%;
     display:none;
-    margin-top:100px;
 }
 
 .photo-6{
     width:100%;
     display:none;
-    margin-top:100px;
 }
 
 .photo-8{
@@ -378,9 +383,7 @@ body {
 .text-10{
     width:100%;
     display:block;
-    margin-top:0;
     display:none;
-    margin-top: 50px
 }
 
 .text-11{
