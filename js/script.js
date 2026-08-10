@@ -151,54 +151,6 @@ seal.addEventListener("click", () => {
 
 });
 
-
-function doPost(e){
-
-  const data = JSON.parse(e.postData.contents);
-
-
-  const sheet = SpreadsheetApp
-      .getActiveSpreadsheet()
-      .getSheetByName("Invitados");
-
-
-  const rows = sheet.getDataRange().getValues();
-
-
-  for(let i = 1; i < rows.length; i++){
-
-    if(rows[i][0] == data.id){
-
-        sheet.getRange(i+1,5)
-        .setValue(data.asistencia);
-
-
-        sheet.getRange(i+1,6)
-        .setValue(data.asistentes);
-
-
-        sheet.getRange(i+1,7)
-        .setValue(new Date());
-
-
-        break;
-    }
-
-  }
-
-
-  return ContentService
-      .createTextOutput(
-        JSON.stringify({
-          success:true
-        })
-      )
-      .setMimeType(
-        ContentService.MimeType.JSON
-      );
-
-}
-
 confirmButton.addEventListener("click", () => {
 
     if (!guestData) {
@@ -206,45 +158,35 @@ confirmButton.addEventListener("click", () => {
         return;
     }
 
-    const requestData = {
-        id: guestId,
-        asistencia: "Sí",
-        asistentes: guestData.invitados.split(',').length
-    };
+    const asistentes = guestData.invitados.split(',').length;
 
-    console.log("Enviando:", requestData);
+    const url =
+        `${guestAPI}?accion=confirmar` +
+        `&id=${encodeURIComponent(guestId)}` +
+        `&asistencia=${encodeURIComponent("Sí")}` +
+        `&asistentes=${asistentes}`;
 
-    fetch(guestAPI, {
-        // method: "POST",
-        // body: JSON.stringify(requestData)
-        method: "POST",
-        headers: {
-            "Content-Type": "text/plain"
-        },
-        body: JSON.stringify({
-            id: guestId,
-            asistencia: "Sí",
-            asistentes: guestData.invitados.split(',').length
+    console.log("Enviando confirmación:", url);
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+
+            console.log("Respuesta:", data);
+
+            if (data.success) {
+
+                alert("¡Gracias por confirmar tu asistencia!");
+
+                confirmButton.disabled = true;
+                confirmButton.textContent =
+                    "✓ Asistencia confirmada";
+            }
         })
-    })
-    .then(response => {
-        console.log("Status:", response.status);
-        return response.json();
-    })
-    .then(result => {
+        .catch(error => {
 
-        console.log("Respuesta:", result);
+            console.error("Error:", error);
 
-        if (result.success) {
-            alert("¡Gracias por confirmar tu asistencia!");
-
-            confirmButton.disabled = true;
-            confirmButton.textContent = "✓ Asistencia confirmada";
-        }
-
-    })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("No fue posible registrar tu confirmación.");
-    });
+            alert("No fue posible registrar tu confirmación.");
+        });
 });
