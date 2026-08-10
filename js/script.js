@@ -215,8 +215,17 @@ confirmButton.addEventListener("click", () => {
     console.log("Enviando:", requestData);
 
     fetch(guestAPI, {
+        // method: "POST",
+        // body: JSON.stringify(requestData)
         method: "POST",
-        body: JSON.stringify(requestData)
+        headers: {
+            "Content-Type": "text/plain"
+        },
+        body: JSON.stringify({
+            id: guestId,
+            asistencia: "Sí",
+            asistentes: guestData.invitados.split(',').length
+        })
     })
     .then(response => {
         console.log("Status:", response.status);
