@@ -20,6 +20,10 @@ body {
     min-height: 100vh;
 }
 
+#guestNames {
+    white-space: pre-line;
+}
+
 .brindis{
     display:none;
     width:100%;
@@ -46,6 +50,7 @@ body {
     font-family:"Cormorant Garamond", serif;
     font-size:1.1rem;
     cursor:pointer;
+    margin-top:20px;
 }
 
 .countdown{
@@ -302,6 +307,7 @@ body {
     z-index:15;
     color: #6b5d52;
     animation: pulse 2s ease-in-out infinite;
+    display:none;
     /* font-size: clamp(1rem, 2vw, 1.2rem); */
 }
 

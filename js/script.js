@@ -39,6 +39,8 @@ const text14 = document.querySelector(".text-14");
 const text15 = document.querySelector(".text-15");
 const photo8 = document.querySelector(".photo-8");
 const brindis = document.querySelector(".brindis");
+const confirmButton = document.querySelector(".confirm-button");
+let guestData = null;
 
 
 if(guestId){
@@ -48,17 +50,24 @@ if(guestId){
     .then(response => response.json())
 
     .then(data => {
+        console.log(data);
+        guestData = data;
 
         document.getElementById("guestFamily")
             .textContent = data.familia;
 
+        document.getElementById("guestNumbers")
+            .textContent = 'Hemos reservado para ustedes ' + data.cupos + ' pases';
 
-        document.getElementById("guestNames")
-            .textContent = data.invitados;
+
+        guestNames = data.invitados.split(',');
+        document.getElementById("guestNames").textContent = guestNames.join('\n');
+
 
     });
 
 }
+
 
 function updateCountdown(){
 
@@ -91,6 +100,14 @@ function updateCountdown(){
 updateCountdown();
 
 setInterval(updateCountdown,1000);
+
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        music.pause();
+    } else {
+        music.play();
+    }
+});
 
 seal.addEventListener("click", () => {
     music.play();
@@ -134,39 +151,6 @@ seal.addEventListener("click", () => {
 
 });
 
-// open.addEventListener("click", () => {
-//     letter.style.display = "block";
-//     letter.style.zIndex = "10";
-//     letter.classList.add("extract");
-//     letterTitle.style.display = "none";
-//     open.style.display = "none";
-//     setTimeout(() => {
-//         letter.classList.add("fullscreen");
-//         letterTitle.style.display = "block";
-//         document.querySelector("h1").style.opacity="1";
-//         countdown.style.display = "block";
-//         churchLocation.style.display = "block";
-
-//     }, 1000);
-// });
-
-// letter.addEventListener("click", () => {
-//     letterTitle.style.display = "none";
-//     letter.style.display = "block";
-//     letter.style.zIndex = "10";
-//     letter.classList.add("extract");
-//     open.style.display = "none";
-//     letter.classList.add("fullscreen");
-//     setTimeout(() => {
-//         letter.classList.add("fullscreen");
-//         letterTitle.style.display = "block";
-//         document.querySelector("h1").style.opacity="1";
-//         countdown.style.display = "block";
-//         churchLocation.style.display = "block";
-
-//     }, 1000);
-    
-// });
 
 function doPost(e){
 
@@ -214,3 +198,44 @@ function doPost(e){
       );
 
 }
+
+confirmButton.addEventListener("click", () => {
+
+    if (!guestData) {
+        alert("Espera un momento mientras cargamos tu invitación.");
+        return;
+    }
+
+    const requestData = {
+        id: guestId,
+        asistencia: "Sí",
+        asistentes: guestData.invitados.split(',').length
+    };
+
+    console.log("Enviando:", requestData);
+
+    fetch(guestAPI, {
+        method: "POST",
+        body: JSON.stringify(requestData)
+    })
+    .then(response => {
+        console.log("Status:", response.status);
+        return response.json();
+    })
+    .then(result => {
+
+        console.log("Respuesta:", result);
+
+        if (result.success) {
+            alert("¡Gracias por confirmar tu asistencia!");
+
+            confirmButton.disabled = true;
+            confirmButton.textContent = "✓ Asistencia confirmada";
+        }
+
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("No fue posible registrar tu confirmación.");
+    });
+});
