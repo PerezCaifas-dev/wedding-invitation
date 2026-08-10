@@ -20,6 +20,25 @@ body {
     min-height: 100vh;
 }
 
+#guestList {
+    /* display: flex;
+    flex-direction: column;
+    gap: 8px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: fit-content;
+    margin: 15px auto;
+    text-align: left;
+}
+
+#guestList label {
+    /* display: block; */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 #guestNames {
     white-space: pre-line;
 }
@@ -109,6 +128,10 @@ body {
     display:block;
     font-size: 2vw;
     font-family: "Cormorant Garamond";
+}
+
+.guest-checkbox {
+    accent-color: black;
 }
 
 .hero {

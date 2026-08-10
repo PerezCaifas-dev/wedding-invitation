@@ -41,6 +41,8 @@ const photo8 = document.querySelector(".photo-8");
 const brindis = document.querySelector(".brindis");
 const confirmButton = document.querySelector(".confirm-button");
 let guestData = null;
+// let guestNames = [];
+const guestList = document.getElementById("guestList");
 
 
 if(guestId){
@@ -60,8 +62,29 @@ if(guestId){
             .textContent = 'Hemos reservado para ustedes ' + data.cupos + ' pases';
 
 
-        guestNames = data.invitados.split(',');
-        document.getElementById("guestNames").textContent = guestNames.join('\n');
+        // guestNames = data.invitados.split(',');
+        // document.getElementById("guestNames").textContent = guestNames.join('\n');
+
+        const guestNames = guestData.invitados
+            .split(',')
+            .map(name => name.trim());
+
+        guestNames.forEach((name, index) => {
+
+            const label = document.createElement("label");
+
+            label.innerHTML = `
+                <input 
+                    type="checkbox" 
+                    value="${name}"
+                    class="guest-checkbox"
+                   
+                >
+                ${name}
+            `;
+
+            guestList.appendChild(label);
+        });
 
 
     });
@@ -158,13 +181,29 @@ confirmButton.addEventListener("click", () => {
         return;
     }
 
-    const asistentes = guestData.invitados.split(',').length;
+    // const asistentes = guestData.invitados.split(',').length;
+
+    const selectedGuests = [
+        ...document.querySelectorAll(".guest-checkbox:checked")
+    ];
+
+    if (selectedGuests.length === 0) {
+        alert("Por favor, selecciona las personas que asistirán.");
+        return;
+    }
+
+    const cantidadAsistentes = selectedGuests.length;
+
+    const asistentes = selectedGuests.map(
+        checkbox => checkbox.value
+    );
 
     const url =
         `${guestAPI}?accion=confirmar` +
         `&id=${encodeURIComponent(guestId)}` +
         `&asistencia=${encodeURIComponent("Sí")}` +
-        `&asistentes=${asistentes}`;
+        `&asistentes=${cantidadAsistentes}` +
+        `&nombres=${asistentes}`;
 
     console.log("Enviando confirmación:", url);
 
@@ -190,3 +229,4 @@ confirmButton.addEventListener("click", () => {
             alert("No fue posible registrar tu confirmación.");
         });
 });
+
